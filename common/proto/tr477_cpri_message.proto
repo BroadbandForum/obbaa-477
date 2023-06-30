@@ -1,0 +1,133 @@
+syntax = "proto3";
+
+//**************************************************************************
+// TR-477 Control Packet Redirect Interface Message Protocol Buffer Schema
+//
+//  Copyright (c) 2021, Broadband Forum
+//
+//  Redistribution and use in source and binary forms, with or
+//   without modification, are permitted provided that the following
+//   conditions are met:
+//
+//   1. Redistributions of source code must retain the above copyright
+//      notice, this list of conditions and the following disclaimer.
+//
+//   2. Redistributions in binary form must reproduce the above
+//      copyright notice, this list of conditions and the following
+//      disclaimer in the documentation and/or other materials
+//      provided with the distribution.
+//
+//   3. Neither the name of the copyright holder nor the names of its
+//      contributors may be used to endorse or promote products
+//      derived from this software without specific prior written
+//      permission.
+//
+//   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+//   CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+//   INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+//   MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//   DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+//   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+//   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+//   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+//   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+//   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+//   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+//   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+//   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+//   The above license is used as a license under copyright only.
+//   Please reference the Forum IPR Policy for patent licensing terms
+//   <https://www.broadband-forum.org/ipr-policy>.
+//
+//   Any moral rights which are necessary to exercise under the above
+//   license grant are also deemed granted under this license.
+//
+// | Version           | Name                   | Date       |
+// | TR-477 1.0.0      | xxx                    | TBD, 2022  |
+//
+// BBF software release registry: http://www.broadband-forum.org/software
+//**************************************************************************
+
+package tr477_cpri_message.v1;
+option go_package = "common/pb/tr477";
+
+message Hello {
+  string entity_name = 1;   //Unique name of the pOLT or D-OLT
+  string endpoint_name = 2; //The pOLT or D-OLT endpoint name
+}
+
+message HelloCpriRequest {
+  Hello local_endpoint_hello = 1;
+}
+
+message HelloCpriResponse {
+  Hello remote_endpoint_hello = 1;
+}
+
+
+message CpriMsgHeader {
+  string msg_id = 1;  // Message identifier to
+                      // 1) Identify requests and notifications
+}
+
+message GenericMetadata {
+  enum PacketDirection {
+     UNI_TO_NNI = 0;  //UNI to NNI direction
+     NNI_TO_UNI = 1;  //NNI to UNI direction
+  }
+
+  string device_name = 1;        //The name of the device where the packet was
+                                 //intercepted/is destined to
+  string device_interface = 2;   //The name of the interface where the packet
+                                 //was intercepted/is destined to. Typically
+                                 //this should be the name of a TR-383 VLAN
+                                 //sub-interface
+  PacketDirection direction = 3; //The direction of the packet when it was
+                                 //intercepted/the direction to inject the
+                                 //packet
+}
+
+message OnuMetadata {
+  string  channel_termination = 1; //The local name of the channel termination
+                                   //in the OLT where the ONU is attached
+  string  onu_id = 2;              //ITU-T Transmission Convergence (TC)
+                                   //layer ONU-ID
+}
+
+message HardwareIdElements {
+  //Hardware Identification elements (TR-101i2 section 3.9.3, Table 2)
+  string chassis_number = 1;  //Char(2) Chassis number in the access node
+  string rack_number = 2;     //Char(2) Rack number in the access node
+  string frame_number = 3;    //Char(2) Frame number in the rack
+  string slot_number = 4;     //Char(2) Slot number in the chassis or rack or
+                              //frame
+  string sub_slot_number = 5; //Char(2) Sub-slot number
+  string port_number = 6;     //Char(3) Port number in the slot
+}
+
+message DhcpMetadata {
+  HardwareIdElements hw_id_elements = 1;
+}
+
+message PppoeMetadata {
+  HardwareIdElements hw_id_elements = 1;
+}
+
+
+message CpriMetaData {
+  GenericMetadata generic = 1;  //Common generic metadata
+  OnuMetadata onu = 2;          //Optional information about the ONU that
+                                //originated the packet or is destination
+                                //for the packet
+  oneof specific_metadata {
+    DhcpMetadata dhcp = 3;
+    PppoeMetadata pppoe = 4;
+  }
+}
+
+message CpriMsg {
+  CpriMsgHeader header = 1;
+  CpriMetaData meta_data = 2;
+  bytes packet = 3;            //Unmodified contents of the packet
+}

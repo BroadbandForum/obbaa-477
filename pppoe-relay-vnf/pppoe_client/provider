@@ -1,0 +1,9 @@
+user client
+password password
+plugin rp-pppoe.so
+mtu 1492
+persist
+debug
+noauth
+nodetach
+eth0

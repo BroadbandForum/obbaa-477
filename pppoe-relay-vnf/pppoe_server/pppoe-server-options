@@ -1,0 +1,3 @@
+require-chap
+lcp-echo-interval 1
+lcp-echo-failure 5
