@@ -24,7 +24,7 @@ package pppoe_profile
 import (
 	"context"
 
-	"github.com/obbaa-477/common/db/interfaces"
+	"github.com/BroadbandForum/obbaa-477/common/db/interfaces"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"

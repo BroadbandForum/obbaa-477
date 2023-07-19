@@ -26,8 +26,8 @@ import (
 	"context"
 	"os"
 
-	pb "github.com/obbaa-477/common/pb/tr477"
-	log "github.com/obbaa-477/common/utils/log"
+	pb "github.com/BroadbandForum/obbaa-477/common/pb/tr477"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
 )
 
 type cpriHelloService struct {

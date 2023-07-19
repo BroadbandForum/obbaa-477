@@ -26,13 +26,13 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/obbaa-477/common/db/dao"
-	log "github.com/obbaa-477/common/utils/log"
+	"github.com/BroadbandForum/obbaa-477/common/db/dao"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
 
-	"github.com/obbaa-477/common/db/interfaces"
+	"github.com/BroadbandForum/obbaa-477/common/db/interfaces"
 
-	"github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/device/subscriber_profile"
-	"github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/device/vsi"
+	"github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/device/subscriber_profile"
+	"github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/device/vsi"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"

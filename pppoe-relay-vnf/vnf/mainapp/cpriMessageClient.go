@@ -25,8 +25,8 @@ import (
 	"context"
 	"os"
 
-	"github.com/obbaa-477/common/pb/tr477"
-	log "github.com/obbaa-477/common/utils/log"
+	"github.com/BroadbandForum/obbaa-477/common/pb/tr477"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
 	"google.golang.org/grpc"
 )
 

@@ -22,10 +22,10 @@
 package vnf_kafka
 
 import (
-	log "github.com/obbaa-477/common/utils/log"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
 
+	pb "github.com/BroadbandForum/obbaa-477/common/pb/tr451"
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	pb "github.com/obbaa-477/common/pb/tr451"
 )
 
 type KafkaHandler interface {

@@ -1,4 +1,4 @@
-module github.com/obbaa-477/common
+module github.com/BroadbandForum/obbaa-477/common
 
 go 1.18
 

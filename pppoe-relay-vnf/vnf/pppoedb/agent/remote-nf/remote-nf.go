@@ -1,9 +1,9 @@
 package remotenf
 
 import (
-	"github.com/obbaa-477/common/db/interfaces"
-	nfclient "github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent/remote-nf/nf-client"
-	nfserver "github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent/remote-nf/nf-server"
+	"github.com/BroadbandForum/obbaa-477/common/db/interfaces"
+	nfclient "github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent/remote-nf/nf-client"
+	nfserver "github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent/remote-nf/nf-server"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

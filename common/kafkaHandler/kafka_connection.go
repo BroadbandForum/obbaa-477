@@ -24,9 +24,9 @@ package vnf_kafka
 import (
 	"time"
 
+	pb "github.com/BroadbandForum/obbaa-477/common/pb/tr451"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
 	kafka "github.com/confluentinc/confluent-kafka-go/kafka"
-	pb "github.com/obbaa-477/common/pb/tr451"
-	log "github.com/obbaa-477/common/utils/log"
 	"google.golang.org/protobuf/proto"
 )
 

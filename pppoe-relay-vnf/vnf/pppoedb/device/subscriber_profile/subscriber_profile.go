@@ -26,8 +26,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/obbaa-477/common/db/interfaces"
-	log "github.com/obbaa-477/common/utils/log"
+	"github.com/BroadbandForum/obbaa-477/common/db/interfaces"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"

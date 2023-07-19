@@ -27,11 +27,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/obbaa-477/common/db/dao"
-	pb "github.com/obbaa-477/common/pb/tr477"
-	log "github.com/obbaa-477/common/utils/log"
-	"github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb"
-	"github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/device"
+	"github.com/BroadbandForum/obbaa-477/common/db/dao"
+	pb "github.com/BroadbandForum/obbaa-477/common/pb/tr477"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
+	"github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb"
+	"github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/device"
 )
 
 var syntaxMap = map[string]func([]string, int, *pb.CpriMsg) error{

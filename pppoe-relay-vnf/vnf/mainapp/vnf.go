@@ -27,15 +27,15 @@ import (
 	"os"
 	"strconv"
 
+	kafkaHandler "github.com/BroadbandForum/obbaa-477/common/kafkaHandler"
 	kafka "github.com/confluentinc/confluent-kafka-go/kafka"
-	kafkaHandler "github.com/obbaa-477/common/kafkaHandler"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
-	log "github.com/obbaa-477/common/utils/log"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
 
-	pppoePacket "github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoepacket"
+	pppoePacket "github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoepacket"
 )
 
 var socketGrpc = os.Getenv("SOCKET_GRPC") // "0.0.0.0:50051" SDN_MC_SERVER_PORT=50053

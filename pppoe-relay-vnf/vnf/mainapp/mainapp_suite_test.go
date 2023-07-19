@@ -6,11 +6,11 @@ import (
 	"os"
 	"testing"
 
+	"github.com/BroadbandForum/obbaa-477/common/pb/tr477"
+	pppoedb "github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb"
+	"github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoepacket"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/pcap"
-	"github.com/obbaa-477/common/pb/tr477"
-	pppoedb "github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb"
-	"github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoepacket"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

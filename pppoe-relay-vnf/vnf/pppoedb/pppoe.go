@@ -24,8 +24,8 @@ package pppoedb
 import (
 	"os"
 
-	"github.com/obbaa-477/common/db/interfaces"
-	"github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent"
+	"github.com/BroadbandForum/obbaa-477/common/db/interfaces"
+	"github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent"
 
 	"go.mongodb.org/mongo-driver/mongo"
 )

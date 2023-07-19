@@ -24,10 +24,10 @@ package agent
 import (
 	"reflect"
 
-	"github.com/obbaa-477/common/db/interfaces"
-	remotenf "github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent/remote-nf"
-	"github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/device"
-	"github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/pppoe_profile"
+	"github.com/BroadbandForum/obbaa-477/common/db/interfaces"
+	remotenf "github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent/remote-nf"
+	"github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/device"
+	"github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/pppoe_profile"
 
 	"go.mongodb.org/mongo-driver/mongo"
 )

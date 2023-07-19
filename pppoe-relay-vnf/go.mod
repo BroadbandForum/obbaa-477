@@ -1,12 +1,12 @@
-module github.com/obbaa-477/pppoe-relay-vnf
+module github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf
 
 go 1.18
 
 require (
+	github.com/BroadbandForum/obbaa-477/common v1.0.0
 	github.com/confluentinc/confluent-kafka-go v1.9.2
 	github.com/google/gopacket v1.1.19
 	github.com/mdlayher/raw v0.1.0
-	github.com/obbaa-477/common v1.0.0
 	github.com/onsi/ginkgo/v2 v2.3.1
 	github.com/onsi/gomega v1.22.1
 	github.com/stretchr/testify v1.8.2
@@ -16,7 +16,7 @@ require (
 	google.golang.org/protobuf v1.28.1
 )
 
-replace github.com/obbaa-477/common => ../common
+replace github.com/BroadbandForum/obbaa-477/common => ../common
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect

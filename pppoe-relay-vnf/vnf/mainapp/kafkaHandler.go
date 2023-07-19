@@ -28,14 +28,15 @@ import (
 	"os"
 	"strconv"
 
+	dbDao "github.com/BroadbandForum/obbaa-477/common/db/dao"
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	dbDao "github.com/obbaa-477/common/db/dao"
 	"google.golang.org/protobuf/proto"
 
-	kafkaHandler "github.com/obbaa-477/common/kafkaHandler"
-	pb "github.com/obbaa-477/common/pb/tr451"
-	log "github.com/obbaa-477/common/utils/log"
-	pppoedb "github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
+
+	kafkaHandler "github.com/BroadbandForum/obbaa-477/common/kafkaHandler"
+	pb "github.com/BroadbandForum/obbaa-477/common/pb/tr451"
+	pppoedb "github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb"
 )
 
 var (
@@ -132,11 +133,16 @@ func (*pppoeVnfKafkaHandler) UpdateConfig(producer *kafka.Producer, packet *pb.M
 	deltaBytes := getDeltaConfig(packet.Body.GetRequest().GetUpdateConfig())
 
 	log.Info("Handling UpdateConfig message")
-	json.Unmarshal(deltaBytes, &deltaConfig)
-	err := dbDao.ProcessVNFDatabase(&deltaConfig, mongoClient)
+	err := json.Unmarshal(deltaBytes, &deltaConfig)
 	if err != nil {
-		log.Error("Error during update config: ", err)
+		log.Error("Error marshaling json: ", err)
 		statusCode = pb.Status_ERROR_GENERAL
+	} else {
+		err = dbDao.ProcessVNFDatabase(&deltaConfig, mongoClient)
+		if err != nil {
+			log.Error("Error during update config: ", err)
+			statusCode = pb.Status_ERROR_GENERAL
+		}
 	}
 	msg := pb.Msg{
 		Header: &pb.Header{

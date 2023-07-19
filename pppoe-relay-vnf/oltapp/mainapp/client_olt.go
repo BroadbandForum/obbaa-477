@@ -5,10 +5,10 @@ import (
 	"flag"
 	"io"
 
-	tr477 "github.com/obbaa-477/common/pb/tr477"
+	tr477 "github.com/BroadbandForum/obbaa-477/common/pb/tr477"
 
-	log "github.com/obbaa-477/common/utils/log"
-	osadapters "github.com/obbaa-477/common/utils/osadapters"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
+	osadapters "github.com/BroadbandForum/obbaa-477/common/utils/osadapters"
 
 	"net"
 	"os"

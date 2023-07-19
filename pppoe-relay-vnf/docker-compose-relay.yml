@@ -103,6 +103,7 @@ services:
 
   control_relay:
     image: broadbandforum/obbaa-control-relay:develop
+    # image: control_relay:latest
     container_name: control_relay
     restart: always
     ports:
@@ -198,17 +199,17 @@ services:
       kafka_network:
         ipv4_address: "172.16.1.6"
 
-  kafka-gpb-tester:
-    image: kafka-gpb-tester:latest
-    container_name: kafka-gpb-tester
-    build: 
-      context: ../common/kafka-gpb-tester/
-      dockerfile: ./Dockerfile
-    networks:
-      kafka_network:
-        ipv4_address: "172.16.1.3"
-    depends_on:
-      - kafka
+  # kafka-gpb-tester:
+  #   image: kafka-gpb-tester:latest
+  #   container_name: kafka-gpb-tester
+  #   build: 
+  #     context: ../common/kafka-gpb-tester/
+  #     dockerfile: ./Dockerfile
+  #   networks:
+  #     kafka_network:
+  #       ipv4_address: "172.16.1.3"
+  #   depends_on:
+  #     - kafka
     
   mongo:
     image: mongo:6.0

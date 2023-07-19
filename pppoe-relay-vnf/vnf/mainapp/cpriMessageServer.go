@@ -25,8 +25,8 @@ import (
 	"io"
 	"net"
 
-	tr477 "github.com/obbaa-477/common/pb/tr477"
-	log "github.com/obbaa-477/common/utils/log"
+	tr477 "github.com/BroadbandForum/obbaa-477/common/pb/tr477"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
 	"google.golang.org/grpc"
 )
 

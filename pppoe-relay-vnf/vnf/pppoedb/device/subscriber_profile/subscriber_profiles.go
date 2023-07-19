@@ -24,9 +24,9 @@ package subscriber_profile
 import (
 	"context"
 
-	log "github.com/obbaa-477/common/utils/log"
+	log "github.com/BroadbandForum/obbaa-477/common/utils/log"
 
-	"github.com/obbaa-477/common/db/interfaces"
+	"github.com/BroadbandForum/obbaa-477/common/db/interfaces"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"

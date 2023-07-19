@@ -22,7 +22,7 @@
 package dao
 
 import (
-	"github.com/obbaa-477/common/db/interfaces"
+	"github.com/BroadbandForum/obbaa-477/common/db/interfaces"
 
 	"go.mongodb.org/mongo-driver/mongo"
 )

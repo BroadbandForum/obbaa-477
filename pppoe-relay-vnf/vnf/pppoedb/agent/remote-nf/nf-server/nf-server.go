@@ -3,9 +3,9 @@ package nfserver
 import (
 	"context"
 
-	"github.com/obbaa-477/common/db/interfaces"
-	listen_endpoint "github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent/remote-nf/nf-server/listen-endpoint"
-	remotenf_common "github.com/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent/remote-nf/remote-nf-common"
+	"github.com/BroadbandForum/obbaa-477/common/db/interfaces"
+	listen_endpoint "github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent/remote-nf/nf-server/listen-endpoint"
+	remotenf_common "github.com/BroadbandForum/obbaa-477/pppoe-relay-vnf/vnf/pppoedb/agent/remote-nf/remote-nf-common"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
